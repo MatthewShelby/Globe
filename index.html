@@ -5,12 +5,117 @@
   <meta charset="UTF-8" />
   <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Jura:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
   <title>Globe App</title>
 </head>
 
 <body>
   <!-- <div id="app"></div> -->
-  <script type="module" src="./main.js"></script>
+
+  <div id="displayer">
+    <div class="main-title">
+      LenzoLab
+    </div>
+    <h1 class="subtitle">A financial world of blockchain projects.</h1>
+
+
+    <div style="display: none;">
+      <button id="japan">
+        Japan
+      </button>
+      <button id="california">
+        California
+      </button>
+      <button id="iran">
+        Iran
+      </button>
+      <button id="spain">
+        Spain
+      </button>
+      <button id="rand">
+        Random
+      </button>
+      <button id="Stop">
+        Un Stop
+      </button>
+      <div>
+        <input type="number" id="input1">
+        <button id="go-btn">
+          Go
+        </button>
+      </div>
+      <br>
+      <br>
+      <table style="font-size: x-large;">
+        <br>
+        <tr>
+          <th>Current Y Rotation</th>
+          <td id="cr1"></td>
+        </tr>
+        <tr>
+          <th>Current Y quaternion</th>
+          <td id="cq1"></td>
+        </tr>
+        <tr>
+          <th>Deficite</th>
+          <td id="df1"></td>
+        </tr>
+        <tr>
+          <th>Deficite Count</th>
+          <td id="df2"></td>
+        </tr>
+        <tr>
+          <th>Final Deficite</th>
+          <td id="df3"></td>
+        </tr>
+        <tr>
+          <th>Test Deficite</th>
+          <td id="df4"></td>
+        </tr>
+        <tr>
+          <th>Min</th>
+          <td id="min"></td>
+        </tr>
+        <tr>
+          <th>Max</th>
+          <td id="max"></td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div class="links">
+      <p class="link" id="lenzo"> Lenzo</p>
+      <p class="link" id="opous"> Opous</p>
+      <p class="link" id="de"> DeCuple</p>
+      <p class="link"> Faxen</p>
+      <p class="link"> Sports Win</p>
+    </div>
+
+
+
+  </div>
+  <div class="description" id="des-card">
+    <p class="des-title" id="des-title"> Description Title</p>
+    <p class="des-text" id="des-text"> Description text</p>
+    <p class="des-btn" id="des-btn"> Read More</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script type="module" src="./page.js"></script>
+
+  <script type="module" src="./main2.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>
