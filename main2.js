@@ -2,14 +2,16 @@
 
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
+var ySpeed = 0.002;
 
-
-const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
+// const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
 camera.position.set(0, 10, 20);
 const renderer = new THREE.WebGLRenderer();
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0f1b17);
-renderer.setSize(innerWidth * 0.5, innerHeight);
+// renderer.setSize(innerWidth * 0.5, innerHeight);
+renderer.setSize(innerWidth, innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
@@ -17,7 +19,7 @@ scene.add(new THREE.AmbientLight(0xffffff));
 
 
 
-Array(40).fill().forEach(addStar);
+Array(1140).fill().forEach(addStar);
 
 function addStar() {
 
@@ -74,9 +76,54 @@ glftLoader.load('./assets/objects/globe1/Project Name.gltf', (gltfScene) => {
       sphere = gltfScene.scene;
       // g1.rotateY(120)
       scene.add(sphere);
+      sphere.position.set(17, 0, 0);
+
 
 });
 
+function pos() {
+      var tt = 0;
+      // all with  sec-hide slow fade out
+      $('.sec-hide').fadeOut(1000);
+      setTimeout(() => {
+            $('.details').fadeIn(1000);
+      }, 1000);
+      var interval = setInterval(() => {
+            sphere.position.x += 1;
+            sphere.position.z -= 0.2;
+            sphere.scale.y += 0.7;
+            sphere.scale.z += 0.7;
+            tt++;
+            if (tt > 30) {
+                  clearInterval(interval);
+                  ySpeed = 0.00038
+                  stopper = false
+            }
+      }, 35);
+
+      //var dd = Number(document.getElementById('inp1').value);
+      //var d2 = Number(document.getElementById('inp2').value);
+
+      //sphere.position.set(dd, 0, d2);
+}
+// document.getElementById('set').addEventListener('click', pos)
+
+function pos2() {
+      var tt = 0;
+      var interval = setInterval(() => {
+            sphere.position.x -= 1;
+            sphere.position.z += 0.2;
+            sphere.scale.y -= 0.7;
+            sphere.scale.z -= 0.7;
+            tt++;
+            if (tt > 30) {
+                  clearInterval(interval);
+                  ySpeed = 0.002
+                  stopper = false
+            }
+      }, 35);
+}
+// document.getElementById('set2').addEventListener('click', pos2)
 //#endregion
 
 
@@ -86,7 +133,8 @@ var stopper = false;
 function animate() {
       requestAnimationFrame(animate);
       if (!mouseDown && !stopper) {
-            sphere.rotateY(0.002);
+            sphere.rotateY(ySpeed);
+            // sphere.rotateY(0.002);
       }
 
       setPageInfo();
@@ -269,10 +317,10 @@ document.getElementById('de').addEventListener('click', openDeCuple)
 document.getElementById('faxen').addEventListener('click', openFaxen)
 document.getElementById('win').addEventListener('click', openWin)
 
-
+var latestDetail;
 
 function openLenzo() {
-
+      latestDetail = 'lenzo';
       var isOn = document.getElementById('des-card').style.display;
       if (isOn == 'block') {
             $("#des-card").toggle(200);
@@ -284,6 +332,7 @@ function openLenzo() {
 }
 
 function openOpous() {
+      latestDetail = 'opous';
 
       var isOn = document.getElementById('des-card').style.display;
       if (isOn == 'block') {
@@ -296,7 +345,8 @@ function openOpous() {
 }
 
 function openDeCuple() {
-
+      latestDetail = 'decuple';
+      console.log('latestDetail :' + latestDetail)
       var isOn = document.getElementById('des-card').style.display;
       if (isOn == 'block') {
             $("#des-card").toggle(200);
@@ -307,7 +357,118 @@ function openDeCuple() {
       $("#des-card").toggle(900);
 }
 
+function openFaxen() {
+      latestDetail = 'faxen';
+
+      var isOn = document.getElementById('des-card').style.display;
+      if (isOn == 'block') {
+            $("#des-card").toggle(200);
+      }
+      GoRandom();
+      document.getElementById('des-title').innerHTML = 'Faxen Exchange';
+      document.getElementById('des-text').innerHTML = 'Faxen is a centeralized exchange serves you with best rates for most of cryptos.';
+      $("#des-card").toggle(900);
+}
+
+function openWin() {
+      latestDetail = 'win';
+
+      var isOn = document.getElementById('des-card').style.display;
+      if (isOn == 'block') {
+            $("#des-card").toggle(200);
+      }
+      GoRandom();
+      document.getElementById('des-title').innerHTML = 'Sports win store';
+      document.getElementById('des-text').innerHTML = 'At the Sports store you can stake "LENZ" and get rewarded with sport euipments.';
+      $("#des-card").toggle(900);
+}
+
 //#endregion
+
+
+//#region DETAILS
+
+document.getElementById('des-btn').addEventListener('click', openDetails)
+function openDetails() {
+      setDetails()
+      pos()
+}
+
+document.getElementById('close-btn').addEventListener('click', closeDetails)
+function closeDetails() {
+      pos2()
+      $('#details').fadeOut(1000)
+      setTimeout(() => {
+            $('.sec-hide').fadeIn(1000)
+
+      }, 1000);
+
+}
+
+function closeDescription() {
+      $('#des-card').fadeOut(300);
+      stopper = false;
+}
+document.querySelector('canvas').addEventListener('click', closeDescription)
+
+
+function setDetails() {
+      console.log('setDetails been called. latestDetail is: ' + latestDetail)
+      switch (latestDetail) {
+            case 'lenzo':
+                  document.getElementById('details-title').innerHTML = 'Lenzo - Finances and beyond'
+                  document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo. <br>Youll be able to manage all transactions at once.          <br> At Lenzo, you can be in charge of your future...     '
+                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Lenzo.png)";
+                  document.getElementById('main-link').href = 'http://faxen.io'
+                  break;
+
+
+            case 'opous':
+                  document.getElementById('details-title').innerHTML = 'Opous - The GameFi platform'
+                  document.getElementById('details-text').innerHTML = 'Opous is a browser-based metaverse simulation game. players will gain access to functionalities and rewards by participating in challenges. the play reflects a great expression of the "play to own" concept.  '
+                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Opous.png)";
+                  document.getElementById('main-link').href = 'http://opous.network'
+                  break;
+
+            case 'decuple':
+                  document.getElementById('details-title').innerHTML = 'DeCuple NFTs - The NFT marketplace'
+                  document.getElementById('details-text').innerHTML = 'At the Decuple, you can buy, sell, mint, presell and airdrop NFTs. also you can order an NFT with your specific utilities. some of utilities are just great services on our other blockchain projects ofcource includes a big discount'
+                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/DeCuple.png)";
+                  document.getElementById('main-link').href = 'http://decuple.network'
+                  break;
+
+            case 'faxen':
+                  document.getElementById('details-title').innerHTML = 'Faxen Exchange - The Crypto market'
+                  document.getElementById('details-text').innerHTML = 'Faxen is a regulated centralized exchange where every body can buy/sell crypto and place an offer. Traders can use all the future and option trade tools on the platform'
+                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Faxen.png)";
+                  document.getElementById('main-link').href = 'http://faxen.io'
+                  break;
+
+
+            case 'win':
+                  document.getElementById('details-title').innerHTML = 'Sports Win'
+                  document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li> <li>Olympics</li> <p>We would be all together....</p>'
+                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Win.png)";
+                  document.getElementById('main-link').href = 'https://sports.yahoo.com/'
+                  break;
+
+
+            default:
+                  break;
+      }
+
+}
+
+
+$('#pic-frame').mouseover(function () {
+      $('#center-link-add').show();
+})
+
+$('#pic-frame').mouseleave(function () {
+      $('#center-link-add').hide();
+})
+//#endregion
+
 
 
 

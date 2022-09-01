@@ -4,15 +4,38 @@ body {
   place-items: center;
   /* min-width: 320px;
   min-height: 100vh; */
-  background-color: #0f1b17;
+  /* background-color: #0f1b17; */
+  background-color: #0f1b1700;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+.close-btn {
+  margin-top: -50px;
+  text-align: end;
+  cursor: pointer;
+}
+
+.cx {
+  scale: 2;
+}
+
+.cx:hover {
+  background-color: rgba(127, 255, 212, 0.199);
+  scale: 2.2;
+  border-radius: 50%;
+}
 
 .main-title {
+  background: -webkit-linear-gradient(aquamarine, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Jura', sans-serif;
   font-weight: 500;
-  font-size: 10vw;
+  font-size: 8rem;
   z-index: 99;
 }
 
@@ -20,6 +43,8 @@ body {
   /* font-family: 'Roboto', sans-serif; */
   font-family: 'Changa', sans-serif;
   font-weight: 200;
+  font-size: 2rem;
+  color: rgb(141, 179, 166);
 }
 
 #displayer {
@@ -29,7 +54,159 @@ body {
   width: 50vw;
   height: 90vh;
   padding: 2%;
+  position: absolute;
 }
+
+.details {
+  width: 70vw;
+  height: 60vh;
+  /* padding: 3px;
+  margin: 3px; */
+  display: none;
+  /* border: 2px red solid; */
+  /* white-space: nowrap; */
+}
+
+.details-left {
+  width: 50%;
+  /* height: 100%; */
+  margin: 0;
+  display: inline-block;
+  white-space: initial;
+  /* border: 2px rgb(136, 255, 0) solid; */
+  padding: 1%;
+  /* box-sizing: border-box; */
+}
+
+.details-right {
+  width: 50%;
+  /* height: 100%; */
+  margin: 0;
+  display: inline-block;
+  white-space: wrap;
+  /* border: 2px rgb(7, 125, 194) solid; */
+  /* box-sizing: border-box; */
+  padding: 5%;
+}
+
+.details-title {
+  color: rgb(223, 235, 231);
+  font-size: 24px;
+  font-weight: 500;
+  /* margin-top: 3%; */
+
+}
+
+.details-text {
+  color: rgb(233, 240, 238);
+  font-size: 20px;
+  font-weight: 200;
+  text-align: justify;
+}
+
+.site-pic {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+
+#back-img {
+  background-image: url(assets/images/Sites/DeCuple.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+
+.link-pic {
+  background-color: rgba(240, 255, 255, 0.459);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%;
+  /* bottom: 100%; */
+  z-index: 3;
+  display: none;
+}
+
+.link-pic2 {
+  flex: auto;
+  position: sticky;
+  /* background-color: rgba(240, 255, 255, 0.459);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -100%; */
+  /* bottom: 100%; */
+  z-index: 4;
+  display: none;
+}
+
+.pic-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.half1 {
+  /* display: block; */
+  /* width: 100%; */
+  height: 100%;
+  z-index: 4;
+}
+
+.inside-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#main-link {
+  color: rgb(28, 59, 63);
+
+}
+
+#main-link:hover {
+  color: rgb(16, 41, 44);
+
+}
+
+.inside-img:hover {
+  background-color: rgba(240, 248, 255, 0.6);
+  z-index: 6;
+}
+
+.center-link {
+  color: rgb(28, 59, 63);
+  width: 100%;
+  height: 100%;
+  margin-left: 30%;
+  padding-top: 18%;
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  display: none;
+  text-decoration: underline;
+}
+
+.center-link:hover {
+  display: block;
+}
+
+.half2 {
+  position: relative;
+  bottom: 100%;
+  background-color: rgba(107, 197, 197, 0.1);
+  height: 100%;
+  /* display: block; */
+  /* width: 100%; */
+  /* height: 100%; */
+  z-index: 4;
+  display: none;
+}
+
+
 
 .link {
   font-family: 'Roboto', sans-serif;
@@ -46,13 +223,21 @@ body {
 }
 
 .description {
-  background-color: rgba(85, 136, 119, 0.5);
-  width: 20vw;
-  height: 32vh;
-  position: absolute;
-  margin-left: 63vw;
-  margin-top: 11vw;
-  padding: 2%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.description-sub {
+  background-color: rgba(85, 136, 119, 0.8);
+  border-radius: 5px;
+  width: 22vw;
+  height: 40vh;
+  right: 14vw;
+  top: 52vh;
+  position: fixed;
+  /* margin-left: 63vw;
+  margin-top: 11vw; */
+  padding: 1%;
   display: none;
 }
 
@@ -69,16 +254,19 @@ body {
   font-weight: 300;
   font-size: 20px;
   color: rgb(255, 255, 255);
+  /* background-color: rgba(255, 255, 255, 0.466); */
   margin-top: 0vw;
 }
 
 .des-btn {
-  background-color: rgba(136, 204, 181, 0.7);
-  color: rgb(8, 32, 31);
-  border-radius: 15px;
-  padding: 10px;
-  width: 50%;
+  background-color: rgba(180, 224, 210, 0.6);
+  color: rgba(8, 32, 31, 1);
+  border-radius: 20px;
+  padding: 10px 24px 10px 24px;
+  /* width: 50%; */
   text-align: center;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 table {
