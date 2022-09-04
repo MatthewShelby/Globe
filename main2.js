@@ -6,7 +6,10 @@ var ySpeed = 0.002;
 
 // const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
 const camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
-camera.position.set(0, 10, 20);
+// camera.position.set(0, 10, 20);
+camera.position.set(0, 10, 50);
+camera.zoom = 3.2;
+camera.updateProjectionMatrix();
 const renderer = new THREE.WebGLRenderer();
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0f1b17);
@@ -67,8 +70,8 @@ sphere.position.set(0, 8, 0)
 const glftLoader = new GLTFLoader();
 glftLoader.load('./assets/objects/globe1/Project Name.gltf', (gltfScene) => {
       // gltfScene.scene.position.set(0, -100, 10);
-      const sf = 80;//
-      gltfScene.scene.scale.set(sf, sf, sf);
+      const sf = 95;//
+      gltfScene.scene.scale.set(sf, sf - 20, sf);
 
       //gltfScene.scene.rotation.y = Math.PI / 0.9;
       console.info(gltfScene.scene);
@@ -76,7 +79,7 @@ glftLoader.load('./assets/objects/globe1/Project Name.gltf', (gltfScene) => {
       sphere = gltfScene.scene;
       // g1.rotateY(120)
       scene.add(sphere);
-      sphere.position.set(17, 0, 0);
+      sphere.position.set(17, 2, 0);
 
 
 });
@@ -88,48 +91,38 @@ function pos() {
 
 
             var tt = 0;
-            // all with  sec-hide slow fade out
             $('.sec-hide').fadeOut(1000);
             setTimeout(() => {
                   $('.details').fadeIn(1000);
                   giongToPos1 = false;
 
             }, 1000);
+
             var interval = setInterval(() => {
-                  sphere.position.x += 1;
-                  sphere.position.z -= 0.2;
-                  sphere.scale.y += 0.7;
-                  sphere.scale.z += 0.7;
+                  camera.rotateY(0.003);
                   tt++;
-                  if (tt > 30) {
+                  if (tt > 70) {
                         clearInterval(interval);
                         ySpeed = 0.00038
                         stopper = false
                   }
-            }, 35);
+            }, 8);
       }
-
-      //var dd = Number(document.getElementById('inp1').value);
-      //var d2 = Number(document.getElementById('inp2').value);
-
-      //sphere.position.set(dd, 0, d2);
 }
-// document.getElementById('set').addEventListener('click', pos)
 
 function pos2() {
       var tt = 0;
+
       var interval = setInterval(() => {
-            sphere.position.x -= 1;
-            sphere.position.z += 0.2;
-            sphere.scale.y -= 0.7;
-            sphere.scale.z -= 0.7;
+            camera.rotateY(-0.003);
+
             tt++;
-            if (tt > 30) {
+            if (tt > 70) {
                   clearInterval(interval);
                   ySpeed = 0.002
                   stopper = false
             }
-      }, 35);
+      }, 8);
 }
 // document.getElementById('set2').addEventListener('click', pos2)
 //#endregion
@@ -335,6 +328,8 @@ function openLenzo() {
       }
       GoRandom();
       document.getElementById('des-title').innerHTML = 'Lenzo DeFi';
+      document.getElementById('des-prb').style.width = '80%';
+      // document.getElementById('des-prb').style.width = '25%';
       document.getElementById('des-text').innerHTML = 'Lenzo is a DeFi platform where the token "LENZ" would be managed.';
       $("#des-card").toggle(900);
 }
@@ -348,6 +343,7 @@ function openOpous() {
       }
       GoRandom();
       document.getElementById('des-title').innerHTML = 'Opous GameFi';
+      document.getElementById('des-prb').style.width = '20%';
       document.getElementById('des-text').innerHTML = 'Opous is a Decenteralized game platform. Its a multi genere exciting game.';
       $("#des-card").toggle(900);
 }
@@ -361,6 +357,8 @@ function openDeCuple() {
       }
       GoRandom();
       document.getElementById('des-title').innerHTML = 'DeCuple NFTs';
+      document.getElementById('des-prb').style.width = '65%';
+
       document.getElementById('des-text').innerHTML = 'DeCuple is an amazing NFT Marketplace where you can take buy, stake, and lots of other actions with NFTs';
       $("#des-card").toggle(900);
 }
@@ -374,6 +372,8 @@ function openFaxen() {
       }
       GoRandom();
       document.getElementById('des-title').innerHTML = 'Faxen Exchange';
+      document.getElementById('des-prb').style.width = '45%';
+
       document.getElementById('des-text').innerHTML = 'Faxen is a centeralized exchange serves you with best rates for most of cryptos.';
       $("#des-card").toggle(900);
 }
@@ -387,6 +387,8 @@ function openWin() {
       }
       GoRandom();
       document.getElementById('des-title').innerHTML = 'Sports win store';
+      document.getElementById('des-prb').style.width = '5%';
+
       document.getElementById('des-text').innerHTML = 'At the Sports store you can stake "LENZ" and get rewarded with sport euipments.';
       $("#des-card").toggle(900);
 }
@@ -430,7 +432,7 @@ function setDetails() {
       switch (latestDetail) {
             case 'lenzo':
                   document.getElementById('details-title').innerHTML = 'Lenzo - Finances and beyond'
-                  document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo. <br>Youll be able to manage all transactions at once.          <br> At Lenzo, you can be in charge of your future...     '
+                  document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo.'
                   document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Lenzo.png)";
                   document.getElementById('main-link').href = 'http://faxen.io'
                   break;
@@ -460,7 +462,7 @@ function setDetails() {
 
             case 'win':
                   document.getElementById('details-title').innerHTML = 'Sports Win'
-                  document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li> <li>Olympics</li> <p>We would be all together....</p>'
+                  document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li>  <p>We would be all together....</p>'
                   document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Win.png)";
                   document.getElementById('main-link').href = 'https://sports.yahoo.com/'
                   break;
