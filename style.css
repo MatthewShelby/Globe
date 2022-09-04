@@ -215,6 +215,7 @@ body {
   color: rgb(37, 136, 103);
   margin-top: 10px;
   margin-bottom: 0;
+  max-width: max-content;
 }
 
 .link:hover {

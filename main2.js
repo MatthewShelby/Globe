@@ -81,25 +81,33 @@ glftLoader.load('./assets/objects/globe1/Project Name.gltf', (gltfScene) => {
 
 });
 
+var giongToPos1 = false;
 function pos() {
-      var tt = 0;
-      // all with  sec-hide slow fade out
-      $('.sec-hide').fadeOut(1000);
-      setTimeout(() => {
-            $('.details').fadeIn(1000);
-      }, 1000);
-      var interval = setInterval(() => {
-            sphere.position.x += 1;
-            sphere.position.z -= 0.2;
-            sphere.scale.y += 0.7;
-            sphere.scale.z += 0.7;
-            tt++;
-            if (tt > 30) {
-                  clearInterval(interval);
-                  ySpeed = 0.00038
-                  stopper = false
-            }
-      }, 35);
+      if (!giongToPos1) {
+            giongToPos1 = true;
+
+
+            var tt = 0;
+            // all with  sec-hide slow fade out
+            $('.sec-hide').fadeOut(1000);
+            setTimeout(() => {
+                  $('.details').fadeIn(1000);
+                  giongToPos1 = false;
+
+            }, 1000);
+            var interval = setInterval(() => {
+                  sphere.position.x += 1;
+                  sphere.position.z -= 0.2;
+                  sphere.scale.y += 0.7;
+                  sphere.scale.z += 0.7;
+                  tt++;
+                  if (tt > 30) {
+                        clearInterval(interval);
+                        ySpeed = 0.00038
+                        stopper = false
+                  }
+            }, 35);
+      }
 
       //var dd = Number(document.getElementById('inp1').value);
       //var d2 = Number(document.getElementById('inp2').value);
@@ -393,15 +401,20 @@ function openDetails() {
       setDetails()
       pos()
 }
-
+var goingToPos0 = false;
 document.getElementById('close-btn').addEventListener('click', closeDetails)
 function closeDetails() {
-      pos2()
-      $('#details').fadeOut(1000)
-      setTimeout(() => {
-            $('.sec-hide').fadeIn(1000)
+      if (!goingToPos0) {
+            goingToPos0 = true;
 
-      }, 1000);
+            pos2()
+            $('#details').fadeOut(1000)
+            setTimeout(() => {
+                  $('.sec-hide').fadeIn(1000)
+                  goingToPos0 = false;
+
+            }, 1000);
+      }
 
 }
 
