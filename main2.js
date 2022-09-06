@@ -3,6 +3,23 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
 var ySpeed = 0.002;
+var set = 0;
+
+
+
+
+fetch('https://api.ipregistry.co/?key=tryout')
+      .then(function (response) {
+            return response.json();
+      })
+      .then(function (payload) {
+            //console.log(payload.location.country.name + ', ' + payload.location.city);
+            console.info(payload);
+            set++;
+            console.log(payload.location.country.name + ',   => ' + set);
+      });
+
+console.log('loc: ' + window.location)
 
 // const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
 const camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
@@ -321,6 +338,7 @@ document.getElementById('win').addEventListener('click', openWin)
 var latestDetail;
 
 function openLenzo() {
+      deactivate('lenzo');
       latestDetail = 'lenzo';
       var isOn = document.getElementById('des-card').style.display;
       if (isOn == 'block') {
@@ -335,6 +353,7 @@ function openLenzo() {
 }
 
 function openOpous() {
+      deactivate('opous');
       latestDetail = 'opous';
 
       var isOn = document.getElementById('des-card').style.display;
@@ -349,6 +368,7 @@ function openOpous() {
 }
 
 function openDeCuple() {
+      deactivate('de');
       latestDetail = 'decuple';
       console.log('latestDetail :' + latestDetail)
       var isOn = document.getElementById('des-card').style.display;
@@ -364,6 +384,7 @@ function openDeCuple() {
 }
 
 function openFaxen() {
+      deactivate('faxen');
       latestDetail = 'faxen';
 
       var isOn = document.getElementById('des-card').style.display;
@@ -379,6 +400,7 @@ function openFaxen() {
 }
 
 function openWin() {
+      deactivate('win');
       latestDetail = 'win';
 
       var isOn = document.getElementById('des-card').style.display;
@@ -392,7 +414,15 @@ function openWin() {
       document.getElementById('des-text').innerHTML = 'At the Sports store you can stake "LENZ" and get rewarded with sport euipments.';
       $("#des-card").toggle(900);
 }
+var latestActive = 'lenzo';
+function deactivate(id) {
+      document.getElementById(latestActive).classList.add('link-deactive');
+      document.getElementById(latestActive).classList.remove('link-active');
+      document.getElementById(id).classList.remove('link-deactive');
+      document.getElementById(id).classList.add('link-active');
+      latestActive = id;
 
+}
 //#endregion
 
 
@@ -433,38 +463,38 @@ function setDetails() {
             case 'lenzo':
                   document.getElementById('details-title').innerHTML = 'Lenzo - Finances and beyond'
                   document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo.'
-                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Lenzo.png)";
-                  document.getElementById('main-link').href = 'http://faxen.io'
+                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Lenzo.png)";
+                  //document.getElementById('main-link').href = 'http://faxen.io'
                   break;
 
 
             case 'opous':
                   document.getElementById('details-title').innerHTML = 'Opous - The GameFi platform'
                   document.getElementById('details-text').innerHTML = 'Opous is a browser-based metaverse simulation game. players will gain access to functionalities and rewards by participating in challenges. the play reflects a great expression of the "play to own" concept.  '
-                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Opous.png)";
-                  document.getElementById('main-link').href = 'http://opous.network'
+                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/opous2.png)";
+                  //document.getElementById('main-link').href = 'http://opous.network'
                   break;
 
             case 'decuple':
                   document.getElementById('details-title').innerHTML = 'DeCuple NFTs - The NFT marketplace'
                   document.getElementById('details-text').innerHTML = 'At the Decuple, you can buy, sell, mint, presell and airdrop NFTs. also you can order an NFT with your specific utilities. some of utilities are just great services on our other blockchain projects ofcource includes a big discount'
-                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/DeCuple.png)";
-                  document.getElementById('main-link').href = 'http://decuple.network'
+                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/DeCuple.png)";
+                  //document.getElementById('main-link').href = 'http://decuple.network'
                   break;
 
             case 'faxen':
                   document.getElementById('details-title').innerHTML = 'Faxen Exchange - The Crypto market'
                   document.getElementById('details-text').innerHTML = 'Faxen is a regulated centralized exchange where every body can buy/sell crypto and place an offer. Traders can use all the future and option trade tools on the platform'
-                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Faxen.png)";
-                  document.getElementById('main-link').href = 'http://faxen.io'
+                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Faxen.png)";
+                  //document.getElementById('main-link').href = 'http://faxen.io'
                   break;
 
 
             case 'win':
                   document.getElementById('details-title').innerHTML = 'Sports Win'
                   document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li>  <p>We would be all together....</p>'
-                  document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Win.png)";
-                  document.getElementById('main-link').href = 'https://sports.yahoo.com/'
+                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Win.png)";
+                  //document.getElementById('main-link').href = 'https://sports.yahoo.com/'
                   break;
 
 

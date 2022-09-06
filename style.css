@@ -14,13 +14,18 @@ body {
 }
 
 .close-btn {
-  margin-top: -50px;
+  margin-top: -25vh;
+  margin-right: -20vh;
   text-align: end;
   cursor: pointer;
+  color: rgb(255, 255, 255);
+  /* scale: 150%; */
+
 }
 
+
 .cx {
-  scale: 2;
+  scale: 3;
 }
 
 .cx:hover {
@@ -30,21 +35,32 @@ body {
 }
 
 .main-title {
-  background: -webkit-linear-gradient(aquamarine, #333);
+  /* background: -webkit-linear-gradient(aquamarine, #333); */
+  background: -webkit-linear-gradient(rgba(153, 255, 218, 1), #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Jura', sans-serif;
   font-weight: 500;
   font-size: 8rem;
   z-index: 99;
+  margin-top: -4vh;
+  margin-left: 3vw;
 }
 
 .subtitle {
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Changa', sans-serif;
-  font-weight: 200;
-  font-size: 2rem;
-  color: rgb(141, 179, 166);
+  font-family: 'Jura', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: rgb(219, 235, 229);
+  margin: -2% 0% 15% 10%;
+}
+
+.bl {
+  font-size: 2.4rem;
+  font-weight: 700;
+  /* color: rgba(153, 255, 218, 1); */
+  color: rgba(38, 207, 142, 0.911);
 }
 
 #displayer {
@@ -52,17 +68,19 @@ body {
   color: aquamarine;
   /* border: 4px red solid; */
   width: 50vw;
-  height: 90vh;
+  height: 100vh;
   padding: 2%;
   position: absolute;
 }
 
 .details {
-  width: 70vw;
-  height: 60vh;
+  width: 90vw;
+  height: 10vh;
+  margin-top: -5vh;
   /* padding: 3px;
   margin: 3px; */
   display: none;
+  padding: 30px 50px 30px 50px;
   /* border: 2px red solid; */
   /* white-space: nowrap; */
 }
@@ -78,6 +96,16 @@ body {
   /* box-sizing: border-box; */
 }
 
+.gl {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.295), rgba(153, 255, 218, 0.12), rgba(51, 51, 51, 0.233));
+  padding: 10px;
+  border-radius: 15px;
+  /* margin-left: 50px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
 .details-right {
   width: 50%;
   /* height: 100%; */
@@ -86,13 +114,15 @@ body {
   white-space: wrap;
   /* border: 2px rgb(7, 125, 194) solid; */
   /* box-sizing: border-box; */
-  padding: 5%;
+  /* padding: 5%; */
 }
 
 .details-title {
+  margin-top: 5px;
   color: rgb(223, 235, 231);
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Mukta', sans-serif;
   /* margin-top: 3%; */
 
 }
@@ -107,10 +137,30 @@ body {
 }
 
 .details-text {
-  color: rgb(233, 240, 238);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   font-weight: 200;
   text-align: justify;
+  /* padding: 2%; */
+  color: azure;
+}
+
+
+
+.go-button {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  /* background-color: rgba(38, 207, 142, 0.911); */
+  background-color: rgba(37, 21, 104, 0.911);
+  border-radius: 15px;
+  width: fit-content;
+  padding: 7px 30px 8px 30px;
+  margin-left: 30%;
+}
+
+.go-button:hover {
+  background-color: rgba(53, 31, 139, 0.911);
+  cursor: pointer;
 }
 
 .site-pic {
@@ -119,15 +169,62 @@ body {
   position: relative;
 }
 
-
-#back-img {
-  background-image: url(assets/images/Sites/DeCuple.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
+img {
+  width: 70%;
+  margin-left: 5%;
 }
 
+#back-img {
+  background-image: url(assets/images/Sites/Opous2.png);
+  /* background-size: 100%; */
+  background-size: 80%;
+  background-repeat: no-repeat;
+  /* width: 100%;
+  height: 100%; */
+}
+
+.links {
+  padding-left: 15%;
+  margin-top: -10%;
+}
+
+.link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  /* color: rgb(37, 136, 103); */
+  color: rgb(77, 109, 98);
+  margin-top: 10px;
+  margin-bottom: 0;
+  /* max-width: max-content; */
+  width: 9vw;
+  /* text-align: center; */
+}
+
+.link:hover {
+  color: rgb(225, 236, 232);
+  /* background-color: rgba(72, 156, 128, 0.274); */
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: wavy;
+  margin-left: 6px;
+}
+
+
+
+.link-active {
+  color: rgb(207, 221, 216);
+  background-color: rgba(127, 255, 212, 0.082);
+  border-left: 4px solid rgb(255, 255, 255);
+  padding: 1px 15px 1px 15px;
+  border-radius: 8px;
+}
+
+.link-deactive {
+  background-color: rgba(127, 255, 212, 0);
+  border: 2px solid rgba(0, 255, 255, 0);
+  padding: 1px 15px 1px 15px;
+}
 
 .link-pic {
   background-color: rgba(240, 255, 255, 0.459);
@@ -217,21 +314,6 @@ body {
 
 
 
-.link {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 32px;
-  color: rgb(37, 136, 103);
-  margin-top: 10px;
-  margin-bottom: 0;
-  max-width: max-content;
-}
-
-.link:hover {
-  color: rgb(72, 156, 128);
-  cursor: pointer;
-}
-
 .description {
   width: 100vw;
   height: 100vh;
@@ -296,7 +378,7 @@ td {
   border-radius: 5px;
   /* padding-left: 10px; */
   padding: 5px;
-  margin: 6px !important;
+  margin: 4px !important;
   margin-bottom: 16px !important;
 }
 
