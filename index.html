@@ -8,13 +8,22 @@
   <link rel="stylesheet" href="./style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Jura:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=Jura:wght@300;400;500;700&family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <title>Globe App</title>
 </head>
@@ -26,7 +35,8 @@
     <div class="main-title">
       LenzoLab
     </div>
-    <h1 class="subtitle sec-hide" style="display: block;">A financial world of blockchain projects.</h1>
+    <h1 class="subtitle sec-hide" style="display: block;">A financial world of <span class="bl"> blockchain</span>
+      projects.</h1>
 
     <!-- the test navigators -->
     <div style="display: none;">
@@ -96,11 +106,11 @@
     </div>
 
     <div class="links  sec-hide" style="display: block;">
-      <p class="link" id="lenzo"> Lenzo</p>
-      <p class="link" id="opous"> Opous</p>
-      <p class="link" id="de"> DeCuple</p>
-      <p class="link" id="faxen"> Faxen</p>
-      <p class="link" id="win"> Sports Win</p>
+      <p class="link link-active" id="lenzo"> Lenzo</p>
+      <p class="link link-deactive" id="opous"> Opous</p>
+      <p class="link link-deactive" id="de"> DeCuple</p>
+      <p class="link link-deactive" id="faxen"> Faxen</p>
+      <p class="link link-deactive" id="win"> Sports </p>
 
       <!-- <input type="number" name="" id="inp1">
       <button id="set">set</button>
@@ -109,11 +119,19 @@
       <button id="set2">set</button>
       <br> -->
     </div>
-    <div class="details" id="details">
-      <div class="col-12 row">
-        <div class="col-6">
-          <p class="details-title" id="details-title"> Opous - The GameFi platform</p>
+    <div class="details " id="details">
+      <div class="col-12 row ">
 
+        <div class=" float-end">
+          <div class="close-btn" id="close-btn">
+            <span class="material-symbols-outlined cx">
+              close
+            </span>
+          </div>
+        </div>
+
+        <div class="col-5 gl">
+          <p class="details-title" id="details-title"> Opous - The GameFi platform</p>
 
           <div class="proper col-12 row">
             <div class="col-6">
@@ -128,12 +146,26 @@
               </div>
             </div>
           </div>
+
           <p class="details-text" id="details-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.</p>
+
+
+
+          <div class="col-12 float-end" id="go-btn">
+            <div class="go-button">Go to page</div>
+          </div>
+
+
         </div>
+
         <div class="col-6">
+          <img src="assets/images/Sites/Opous2.png" alt="">
+        </div>
+        <!--         
+        <div class="col-6 " id="back-img">
           <div class="float-end">
             <div class="close-btn" id="close-btn">
               <span class="material-symbols-outlined cx">
@@ -141,20 +173,9 @@
               </span>
             </div>
           </div>
-          <!-- 
-          <div id="pic-frame" class=" pic-frame">
-            <a href="yahoo.com" target="_blank" title=" gog to the site" class="a-back">
-              <div class="half1 ">
-                <img src="assets/images/Sites/Opous.png" alt="" class="site-pic" id="site-pic">
 
-              </div>
 
-              <div class="half2 " id="site-link-card"></div>
-
-            </a>
-          </div> -->
-
-          <div id="back-img">
+          <div>
             <div class="inside-img" id="pic-frame">
 
               <div class="center-link" id="center-link-add">
@@ -164,7 +185,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
 
 
 
