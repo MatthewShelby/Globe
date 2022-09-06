@@ -318,9 +318,9 @@ function setPageInfo() {
 }
 
 
-document.getElementById('go-btn').addEventListener('click', function () {
-      sphere.rotation.y = Number(document.getElementById('input1').value);
-})
+// document.getElementById('go-btn').addEventListener('click', function () {
+//       sphere.rotation.y = Number(document.getElementById('input1').value);
+// })
 //#endregion
 
 
@@ -334,6 +334,9 @@ document.getElementById('opous').addEventListener('click', openOpous)
 document.getElementById('de').addEventListener('click', openDeCuple)
 document.getElementById('faxen').addEventListener('click', openFaxen)
 document.getElementById('win').addEventListener('click', openWin)
+
+
+
 
 var latestDetail;
 
@@ -463,38 +466,44 @@ function setDetails() {
             case 'lenzo':
                   document.getElementById('details-title').innerHTML = 'Lenzo - Finances and beyond'
                   document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo.'
-                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Lenzo.png)";
-                  //document.getElementById('main-link').href = 'http://faxen.io'
+                  document.getElementById('site-img').src = "assets/images/Sites/Lenzo.png";
+                  document.getElementById('go-btn').href = 'http://lenzo.io'
                   break;
 
 
             case 'opous':
                   document.getElementById('details-title').innerHTML = 'Opous - The GameFi platform'
                   document.getElementById('details-text').innerHTML = 'Opous is a browser-based metaverse simulation game. players will gain access to functionalities and rewards by participating in challenges. the play reflects a great expression of the "play to own" concept.  '
-                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/opous2.png)";
-                  //document.getElementById('main-link').href = 'http://opous.network'
+                  document.getElementById('site-img').src = "assets/images/Sites/Opous.png";
+                  console.log(document.getElementById('go-btn').href)
+                  document.getElementById('go-btn').href = 'http://opous.network'
+                  console.log(document.getElementById('go-btn').href)
+
                   break;
 
             case 'decuple':
                   document.getElementById('details-title').innerHTML = 'DeCuple NFTs - The NFT marketplace'
                   document.getElementById('details-text').innerHTML = 'At the Decuple, you can buy, sell, mint, presell and airdrop NFTs. also you can order an NFT with your specific utilities. some of utilities are just great services on our other blockchain projects ofcource includes a big discount'
-                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/DeCuple.png)";
-                  //document.getElementById('main-link').href = 'http://decuple.network'
+                  document.getElementById('site-img').src = "assets/images/Sites/DeCuple.png";
+                  document.getElementById('go-btn').href = 'http://decuple.network'
+
                   break;
 
             case 'faxen':
                   document.getElementById('details-title').innerHTML = 'Faxen Exchange - The Crypto market'
                   document.getElementById('details-text').innerHTML = 'Faxen is a regulated centralized exchange where every body can buy/sell crypto and place an offer. Traders can use all the future and option trade tools on the platform'
-                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Faxen.png)";
-                  //document.getElementById('main-link').href = 'http://faxen.io'
+                  document.getElementById('site-img').src = "assets/images/Sites/Faxen.png";
+                  document.getElementById('go-btn').href = 'http://faxen.io'
+
                   break;
 
 
             case 'win':
                   document.getElementById('details-title').innerHTML = 'Sports Win'
                   document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li>  <p>We would be all together....</p>'
-                  //document.getElementById('back-img').style.backgroundImage = "url(assets/images/Sites/Win.png)";
-                  //document.getElementById('main-link').href = 'https://sports.yahoo.com/'
+                  document.getElementById('site-img').src = "assets/images/Sites/Win.png";
+                  document.getElementById('go-btn').href = 'https://sports.yahoo.com/'
+
                   break;
 
 

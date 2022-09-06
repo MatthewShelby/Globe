@@ -14,8 +14,8 @@ body {
 }
 
 .close-btn {
-  margin-top: -25vh;
-  margin-right: -20vh;
+  margin-top: -5vh;
+  margin-right: -7vh;
   text-align: end;
   cursor: pointer;
   color: rgb(255, 255, 255);
@@ -25,12 +25,12 @@ body {
 
 
 .cx {
-  scale: 3;
+  /* scale: 3; */
 }
 
 .cx:hover {
   background-color: rgba(127, 255, 212, 0.199);
-  scale: 2.2;
+  /* scale: 2.2; */
   border-radius: 50%;
 }
 
@@ -74,7 +74,8 @@ body {
 }
 
 .details {
-  width: 90vw;
+  /* width: 90vw; */
+  width: 166%;
   height: 10vh;
   margin-top: -5vh;
   /* padding: 3px;
@@ -128,7 +129,7 @@ body {
 }
 
 .details-progress {
-  color: rgb(141, 179, 166);
+  color: rgb(6, 8, 7);
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -149,17 +150,25 @@ body {
 
 .go-button {
   font-size: 18px;
-  color: rgb(255, 255, 255);
+  font-weight: 700;
+  /* color: rgb(6, 8, 7) !important; */
+  color: rgb(255, 255, 255) !important;
   /* background-color: rgba(38, 207, 142, 0.911); */
-  background-color: rgba(37, 21, 104, 0.911);
+  /* background-color: rgba(37, 21, 104, 0.911); */
+  background-color: rgba(38, 207, 142, 0.911);
   border-radius: 15px;
   width: fit-content;
   padding: 7px 30px 8px 30px;
   margin-left: 30%;
+  text-decoration: none;
+}
+
+#go-btn {
+  text-decoration: none;
 }
 
 .go-button:hover {
-  background-color: rgba(53, 31, 139, 0.911);
+  background-color: rgba(49, 163, 118, 0.911);
   cursor: pointer;
 }
 
@@ -170,7 +179,7 @@ body {
 }
 
 img {
-  width: 70%;
+  width: 100%;
   margin-left: 5%;
 }
 
@@ -192,6 +201,7 @@ img {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 24px;
+  border-radius: 6px;
   /* color: rgb(37, 136, 103); */
   color: rgb(77, 109, 98);
   margin-top: 10px;
@@ -205,7 +215,7 @@ img {
   color: rgb(225, 236, 232);
   /* background-color: rgba(72, 156, 128, 0.274); */
   cursor: pointer;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   text-decoration: wavy;
   margin-left: 6px;
 }
@@ -217,7 +227,6 @@ img {
   background-color: rgba(127, 255, 212, 0.082);
   border-left: 4px solid rgb(255, 255, 255);
   padding: 1px 15px 1px 15px;
-  border-radius: 8px;
 }
 
 .link-deactive {
@@ -321,7 +330,7 @@ img {
 
 .description-sub {
   background-color: rgba(85, 136, 119, 0.8);
-  border-radius: 5px;
+  border-radius: 16px;
   width: 22vw;
   height: 40vh;
   right: 14vw;
@@ -353,7 +362,7 @@ img {
 .des-btn {
   background-color: rgba(180, 224, 210, 0.6);
   color: rgba(8, 32, 31, 1);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px 24px 10px 24px;
   /* width: 50%; */
   text-align: center;
@@ -397,9 +406,32 @@ td {
 }
 
 .progress-bar-striped {
-  /* background-color: blueviolet !important; */
-  background-color: rgb(12, 138, 69) !important;
+  /* background-color: blueviolet !important;color: rgba(38, 207, 142, 0.911); */
+  background-color: rgba(38, 207, 142, 0.911) !important;
   background-image: linear-gradient(72deg, rgba(0, 0, 0, .20) 50%, transparent 56%, transparent 84%, rgba(0, 0, 0, .20) 2%, rgba(0, 0, 0, .20) 90%, transparent 121%, transparent);
   background-size: 1rem 1rem;
   width: 33.33333%;
+}
+
+
+.half-border2 {
+  border-top: 4px solid linear;
+}
+
+.half-border {
+  /* max-width: 250px; */
+  padding: 2rem;
+
+  /* -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat; */
+
+
+  /* color: white; */
+  /* border-right-width: 6px;
+  border-right-style: solid; */
+  border: 3px solid;
+  border-image: linear-gradient(25deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0), rgba(255, 255, 255, 0.325))1 20;
+  /* border-right-image:
+    linear-gradient(to bottom,
+      rgb(6, 192, 121),
+      rgba(0, 0, 0, 0)) 1 50%; */
 }
