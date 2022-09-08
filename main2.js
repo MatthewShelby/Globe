@@ -7,7 +7,7 @@ var set = 0;
 
 
 
-
+/*
 fetch('https://api.ipregistry.co/?key=tryout')
       .then(function (response) {
             return response.json();
@@ -20,6 +20,9 @@ fetch('https://api.ipregistry.co/?key=tryout')
       });
 
 console.log('loc: ' + window.location)
+*/
+
+
 
 // const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
 const camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
@@ -288,7 +291,7 @@ export function GoRandom() {
       }
       tt = setTimeout(() => {
             stopper = false
-      }, 18000);
+      }, 8000);
 }
 
 function getRandomLocation() {
@@ -331,7 +334,7 @@ function setPageInfo() {
 
 document.getElementById('lenzo').addEventListener('click', openLenzo)
 document.getElementById('opous').addEventListener('click', openOpous)
-document.getElementById('de').addEventListener('click', openDeCuple)
+document.getElementById('decuple').addEventListener('click', openDeCuple)
 document.getElementById('faxen').addEventListener('click', openFaxen)
 document.getElementById('win').addEventListener('click', openWin)
 
@@ -371,7 +374,7 @@ function openOpous() {
 }
 
 function openDeCuple() {
-      deactivate('de');
+      deactivate('decuple');
       latestDetail = 'decuple';
       console.log('latestDetail :' + latestDetail)
       var isOn = document.getElementById('des-card').style.display;
@@ -424,7 +427,6 @@ function deactivate(id) {
       document.getElementById(id).classList.remove('link-deactive');
       document.getElementById(id).classList.add('link-active');
       latestActive = id;
-
 }
 //#endregion
 
@@ -435,9 +437,11 @@ document.getElementById('des-btn').addEventListener('click', openDetails)
 function openDetails() {
       setDetails()
       pos()
+      onDescription = true;
 }
 var goingToPos0 = false;
 document.getElementById('close-btn').addEventListener('click', closeDetails)
+
 function closeDetails() {
       if (!goingToPos0) {
             goingToPos0 = true;
@@ -450,6 +454,7 @@ function closeDetails() {
 
             }, 1000);
       }
+      onDescription = false;
 
 }
 
@@ -523,6 +528,56 @@ $('#pic-frame').mouseleave(function () {
 })
 //#endregion
 
+
+document.getElementById('bodyX').addEventListener('click', idleReset);
+var idleTime = 10;
+function startIdleCheck() {
+      var interval = setInterval(() => {
+            idleTime++;
+            if (idleTime > 15) {     // turn to 6
+                  idleTime = 0;
+                  doSomething()
+            }
+      }, 1000);
+}
+$(document).ready(
+      console.log('-----READY-----'),
+      startIdleCheck()
+
+)
+var onDescription = false;
+
+function doSomething() {
+      console.log('on DoSomething latest active is: ' + latestDetail)
+      if (!onDescription) {
+
+
+            switch (latestDetail) {
+                  case 'lenzo':
+                        openOpous();
+                        break;
+                  case 'opous':
+                        openDeCuple();
+                        break;
+                  case 'decuple':
+                        openFaxen();
+                        break;
+                  case 'faxen':
+                        openWin();
+                        break;
+                  case 'win':
+                        openLenzo();
+                        break;
+
+                  default:
+                        openOpous();
+                        break;
+            }
+      }
+}
+function idleReset() {
+      console.log('click...................');
+}
 
 
 
