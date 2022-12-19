@@ -25,7 +25,7 @@ camera.zoom = 3.2;
 if (innerHeight > innerWidth) {
       //camera = new THREE.PerspectiveCamera(75, innerHeight / innerWidth, 0.2, 1000);
       camera.position.set(0, 10, 50);
-      camera.zoom = 1.5;
+      camera.zoom = 2.4;
       console.log('for Phone')
       isPhone = true;
 }
@@ -118,7 +118,7 @@ glftLoader.load(theGlobe, (gltfScene) => {
       scene.add(sphere);
       sphere.position.set(17, 2, 0);
       if (isPhone) {
-            sphere.position.set(0, 2, 0);
+            sphere.position.set(0, 4, 0);
 
       }
 

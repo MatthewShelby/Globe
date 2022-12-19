@@ -209,14 +209,14 @@ html {
   .link {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 16px;
     border-radius: 6px;
     /* color: rgb(37, 136, 103); */
     color: rgb(77, 109, 98);
-    margin-top: 10px;
+    margin-top: -3px;
     margin-bottom: 0;
     /* max-width: max-content; */
-    width: 9vw;
+    width: fit-content;
     /* text-align: center; */
   }
 
@@ -340,14 +340,14 @@ html {
   .description-sub {
     background-color: rgba(85, 136, 119, 0.8);
     border-radius: 16px;
-    width: 22vw;
-    height: 40vh;
-    right: 14vw;
+    width: 60vw;
+    height: fit-content;
+    right: 4vw;
     top: 52vh;
     position: fixed;
     /* margin-left: 63vw;
   margin-top: 11vw; */
-    padding: 1%;
+    padding: 6%;
     display: none;
   }
 
