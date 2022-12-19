@@ -4,37 +4,44 @@ import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
 var ySpeed = 0.002;
 var set = 0;
+var theGlobe = './assets/objects/globe1/project name.gltf'
 
 
 
-/*
-fetch('https://api.ipregistry.co/?key=tryout')
-      .then(function (response) {
-            return response.json();
-      })
-      .then(function (payload) {
-            //console.log(payload.location.country.name + ', ' + payload.location.city);
-            console.info(payload);
-            set++;
-            console.log(payload.location.country.name + ',   => ' + set);
-      });
-
-console.log('loc: ' + window.location)
-*/
 
 
-
+var isPhone = false;
 // const camera = new THREE.PerspectiveCamera(75, innerWidth * 0.5 / innerHeight, 0.1, 1000);
-const camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(75, innerWidth * 1.4 / innerHeight, 0.1, 1000);
+
+
+
+
+
 // camera.position.set(0, 10, 20);
 camera.position.set(0, 10, 50);
 camera.zoom = 3.2;
+
+if (innerHeight > innerWidth) {
+      //camera = new THREE.PerspectiveCamera(75, innerHeight / innerWidth, 0.2, 1000);
+      camera.position.set(0, 10, 50);
+      camera.zoom = 1.5;
+      console.log('for Phone')
+      isPhone = true;
+}
+
+
+
 camera.updateProjectionMatrix();
 const renderer = new THREE.WebGLRenderer();
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0f1b17);
 // renderer.setSize(innerWidth * 0.5, innerHeight);
 renderer.setSize(innerWidth, innerHeight);
+if (isPhone) {
+      renderer.setSize(innerWidth, innerHeight);
+
+}
 document.body.appendChild(renderer.domElement);
 
 
@@ -88,19 +95,32 @@ sphere.position.set(0, 8, 0)
 
 //the globe
 const glftLoader = new GLTFLoader();
-glftLoader.load('./assets/objects/globe1/Project Name.gltf', (gltfScene) => {
+glftLoader.load(theGlobe, (gltfScene) => {
       // gltfScene.scene.position.set(0, -100, 10);
-      const sf = 95;//
+      var sf = 95;//
       gltfScene.scene.scale.set(sf, sf - 20, sf);
 
       //gltfScene.scene.rotation.y = Math.PI / 0.9;
-      console.info(gltfScene.scene);
       gltfScene.scene.rotateX(0.21)
+
+      if (isPhone) {
+            sf = 50
+            gltfScene.scene.scale.set(sf, sf, sf);
+            gltfScene.scene.rotateX(-0.21)
+
+      }
+      console.info(gltfScene.scene);
+
+
       sphere = gltfScene.scene;
       // g1.rotateY(120)
+
       scene.add(sphere);
       sphere.position.set(17, 2, 0);
+      if (isPhone) {
+            sphere.position.set(0, 2, 0);
 
+      }
 
 });
 
@@ -208,12 +228,12 @@ canvas.addEventListener('mouseup', function (evt) {
 //#endregion
 
 //#region LOcation CONTROLLER 
-document.getElementById('Stop').addEventListener('click', StopperToggle);
-document.getElementById('california').addEventListener('click', goToCalifornia);
-document.getElementById('iran').addEventListener('click', goToIran);
-document.getElementById('japan').addEventListener('click', goToJapan);
-document.getElementById('spain').addEventListener('click', goToSpain);
-document.getElementById('rand').addEventListener('click', GoRandom);
+// document.getElementById('Stop').addEventListener('click', StopperToggle);
+// document.getElementById('california').addEventListener('click', goToCalifornia);
+// document.getElementById('UAE').addEventListener('click', goToUAE);
+// document.getElementById('japan').addEventListener('click', goToJapan);
+// document.getElementById('spain').addEventListener('click', goToSpain);
+// document.getElementById('rand').addEventListener('click', GoRandom);
 
 
 function StopperToggle() {
@@ -224,7 +244,7 @@ function goToCalifornia() {
       goToAPlace(-2.08);
 }
 
-function goToIran() {
+function goToUAE() {
       goToAPlace(0.82);
 }
 
@@ -309,14 +329,14 @@ function getRandomLocation() {
 
 //#region PageINFRO
 function setPageInfo() {
-      const Nim = Math.PI;
+      // const Nim = Math.PI;
 
-      document.getElementById('cr1').innerHTML = sphere.rotation._y;
-      document.getElementById('cq1').innerHTML = sphere.quaternion._y;
-      document.getElementById('df1').innerHTML = Nim - sphere.rotation._y;
-      document.getElementById('df2').innerHTML = (Math.floor(sphere.rotation._y / Nim));
-      document.getElementById('df3').innerHTML = sphere.rotation._y - (Nim * Math.floor(sphere.rotation._y / Nim));
-      document.getElementById('df4').innerHTML = sphere.rotation._y + (Nim - sphere.rotation._y);
+      // document.getElementById('cr1').innerHTML = sphere.rotation._y;
+      // document.getElementById('cq1').innerHTML = sphere.quaternion._y;
+      // document.getElementById('df1').innerHTML = Nim - sphere.rotation._y;
+      // document.getElementById('df2').innerHTML = (Math.floor(sphere.rotation._y / Nim));
+      // document.getElementById('df3').innerHTML = sphere.rotation._y - (Nim * Math.floor(sphere.rotation._y / Nim));
+      // document.getElementById('df4').innerHTML = sphere.rotation._y + (Nim - sphere.rotation._y);
 
 }
 
