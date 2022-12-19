@@ -484,8 +484,8 @@ function closeDescription() {
 }
 document.querySelector('canvas').addEventListener('click', closeDescription)
 
-
 function setDetails() {
+      removeROw()
       console.log('setDetails been called. latestDetail is: ' + latestDetail)
       switch (latestDetail) {
             case 'lenzo':
@@ -602,3 +602,14 @@ function idleReset() {
 
 
 
+
+
+
+//remOnPhone
+var hasRowRemoved = false;
+function removeROw() {
+      if (!hasRowRemoved) {
+            document.getElementById('remOnPhone').classList.remove('row')
+            hasRowRemoved = true;
+      }
+}

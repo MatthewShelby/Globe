@@ -84,13 +84,14 @@ html {
 
   .details {
     /* width: 90vw; */
-    width: 166%;
+    width: 100%;
     height: 10vh;
     margin-top: -5vh;
     /* padding: 3px;
   margin: 3px; */
     display: none;
-    padding: 30px 50px 30px 50px;
+    /* padding: 30px 50px 30px 50px; */
+    padding: 20px;
     /* border: 2px red solid; */
     /* white-space: nowrap; */
   }
@@ -114,6 +115,13 @@ html {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    width: 100% !important;
+  }
+
+
+  .phone-img {
+    width: 100% !important;
+    margin-top: 6vh;
   }
 
   .details-right {
