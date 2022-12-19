@@ -4,7 +4,7 @@ import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
 var ySpeed = 0.002;
 var set = 0;
-var theGlobe = './assets/objects/globe1/project name.gltf'
+var theGlobe = './assets/objects/globe1/Project Name.gltf'
 
 
 
