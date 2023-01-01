@@ -435,3 +435,13 @@ td {
       rgb(6, 192, 121),
       rgba(0, 0, 0, 0)) 1 50%; */
 }
+
+
+.footer {
+  font-family: 'Jura', sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  color: rgb(219, 235, 229);
+  /* margin: -2% 0% 15% 10%; */
+  margin-left: 5vw;
+}

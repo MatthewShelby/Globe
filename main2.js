@@ -5,6 +5,7 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders
 var ySpeed = 0.002;
 var set = 0;
 var theGlobe = './assets/objects/globe1/Project Name.gltf'
+//var theGlobe = 'https://matthewshelby.github.io/Globe/assets/objects/globe1/Project%20Name.gltf'
 
 
 
@@ -43,6 +44,8 @@ if (isPhone) {
 
 }
 document.body.appendChild(renderer.domElement);
+
+
 
 
 scene.add(new THREE.AmbientLight(0xffffff));
@@ -302,9 +305,9 @@ var locs = [-2.08, 0.82, -0.6, 1.85, -3.05]
 var previous = 7;
 var tt;
 export function GoRandom() {
-      console.log('go random called.')
+      //console.log('go random called.')
       var loc = getRandomLocation();
-      console.log('loc: ' + loc)
+      console.log('go random   loc: ' + loc)
       goToAPlace(loc);
       if (tt) {
             clearTimeout(tt);
@@ -315,12 +318,14 @@ export function GoRandom() {
 }
 
 function getRandomLocation() {
-      console.log('getRandomLocation been called.')
+      //console.log('getRandomLocation been called.')
 
       while (true) {
             var num = Math.floor(Math.random() * 5);
             if (num != previous) {
                   previous = num;
+                  console.log('getRandomLocation  num: ' + num)
+
                   return locs[num];
             }
       }
@@ -329,14 +334,14 @@ function getRandomLocation() {
 
 //#region PageINFRO
 function setPageInfo() {
-      // const Nim = Math.PI;
+      const Nim = Math.PI;
 
-      // document.getElementById('cr1').innerHTML = sphere.rotation._y;
-      // document.getElementById('cq1').innerHTML = sphere.quaternion._y;
-      // document.getElementById('df1').innerHTML = Nim - sphere.rotation._y;
-      // document.getElementById('df2').innerHTML = (Math.floor(sphere.rotation._y / Nim));
-      // document.getElementById('df3').innerHTML = sphere.rotation._y - (Nim * Math.floor(sphere.rotation._y / Nim));
-      // document.getElementById('df4').innerHTML = sphere.rotation._y + (Nim - sphere.rotation._y);
+      document.getElementById('get1').innerHTML = sphere.rotation._y;
+      document.getElementById('get2').innerHTML = sphere.quaternion._y;
+      document.getElementById('get3').innerHTML = Nim - sphere.rotation._y;
+      document.getElementById('get4').innerHTML = (Math.floor(sphere.rotation._y / Nim));
+      document.getElementById('get5').innerHTML = sphere.rotation._y - (Nim * Math.floor(sphere.rotation._y / Nim));
+      document.getElementById('get6').innerHTML = sphere.rotation._y + (Nim - sphere.rotation._y);
 
 }
 
