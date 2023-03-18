@@ -181,7 +181,7 @@ function animate() {
             // sphere.rotateY(0.002);
       }
 
-      setPageInfo();
+      // setPageInfo();
       renderer.render(scene, camera);
 }
 animate();
