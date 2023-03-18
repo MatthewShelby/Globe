@@ -51,14 +51,15 @@ body {
   /* font-family: 'Roboto', sans-serif; */
   font-family: 'Jura', sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: rgb(219, 235, 229);
   margin: -2% 0% 15% 10%;
 }
 
 .bl {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.1rem;
   /* color: rgba(153, 255, 218, 1); */
   color: rgba(38, 207, 142, 0.911);
 }
