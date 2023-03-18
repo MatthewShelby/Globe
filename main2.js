@@ -4,8 +4,8 @@ import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.126.1/examples/jsm/loaders/GLTFLoader.js';
 var ySpeed = 0.002;
 var set = 0;
-var theGlobe = './assets/objects/globe1/Project Name.gltf'
-//var theGlobe = 'https://matthewshelby.github.io/Globe/assets/objects/globe1/Project%20Name.gltf'
+//var theGlobe = './assets/objects/globe1/Project Name.gltf'
+var theGlobe = 'https://matthewshelby.github.io/Globe/assets/objects/globe1/Project%20Name.gltf'
 
 
 
@@ -306,15 +306,15 @@ var previous = 7;
 var tt;
 export function GoRandom() {
       //console.log('go random called.')
-      var loc = getRandomLocation();
-      console.log('go random   loc: ' + loc)
-      goToAPlace(loc);
-      if (tt) {
-            clearTimeout(tt);
-      }
-      tt = setTimeout(() => {
-            stopper = false
-      }, 8000);
+      // var loc = getRandomLocation();
+      // console.log('go random   loc: ' + loc)
+      // goToAPlace(loc);
+      // if (tt) {
+      //       clearTimeout(tt);
+      // }
+      // tt = setTimeout(() => {
+      //       stopper = false
+      // }, 8000);
 }
 
 function getRandomLocation() {
@@ -407,10 +407,10 @@ function openDeCuple() {
             $("#des-card").toggle(200);
       }
       GoRandom();
-      document.getElementById('des-title').innerHTML = 'DeCuple NFTs';
-      document.getElementById('des-prb').style.width = '65%';
+      document.getElementById('des-title').innerHTML = 'Decuple NFTs';
+      document.getElementById('des-prb').style.width = '95%';
 
-      document.getElementById('des-text').innerHTML = 'DeCuple is an amazing NFT Marketplace where you can take buy, stake, and lots of other actions with NFTs';
+      document.getElementById('des-text').innerHTML = 'Decuple is a cutting-edge NFT project that provides a range of valuable services.';
       $("#des-card").toggle(900);
 }
 
@@ -512,8 +512,8 @@ function setDetails() {
                   break;
 
             case 'decuple':
-                  document.getElementById('details-title').innerHTML = 'DeCuple NFTs - The NFT marketplace'
-                  document.getElementById('details-text').innerHTML = 'At the Decuple, you can buy, sell, mint, presell and airdrop NFTs. also you can order an NFT with your specific utilities. some of utilities are just great services on our other blockchain projects ofcource includes a big discount'
+                  document.getElementById('details-title').innerHTML = 'Decuple NFTs - The NFT Platform'
+                  document.getElementById('details-text').innerHTML = 'The Decuple platform offers users multiple ways to derive benefits, and we aim to expand this range of opportunities as each season unfolds continually.'
                   document.getElementById('site-img').src = "assets/images/Sites/DeCuple.png";
                   document.getElementById('go-btn').href = 'http://decuple.network'
 
@@ -571,7 +571,7 @@ $(document).ready(
 
 )
 var onDescription = false;
-
+doSomething()
 function doSomething() {
       console.log('on DoSomething latest active is: ' + latestDetail)
       if (!onDescription) {
