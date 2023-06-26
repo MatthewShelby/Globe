@@ -13,6 +13,11 @@ body {
   display: none;
 }
 
+
+.setWidth {
+  /* width: fit-content !important; */
+}
+
 .close-btn {
   margin-top: -5vh;
   margin-right: -7vh;
@@ -208,7 +213,7 @@ img {
   margin-top: 10px;
   margin-bottom: 0;
   /* max-width: max-content; */
-  width: 9vw;
+  width: 18vw;
   /* text-align: center; */
 }
 

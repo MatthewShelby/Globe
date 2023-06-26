@@ -376,10 +376,14 @@ function openLenzo() {
             $("#des-card").toggle(200);
       }
       GoRandom();
-      document.getElementById('des-title').innerHTML = 'Lenzo DeFi';
-      document.getElementById('des-prb').style.width = '80%';
+      document.getElementById('des-title').innerHTML = 'Campifo';
+      document.getElementById('des-prb').style.width = '30%';
       // document.getElementById('des-prb').style.width = '25%';
-      document.getElementById('des-text').innerHTML = 'Lenzo is a DeFi platform where the token "LENZ" would be managed.';
+      document.getElementById('des-text').innerHTML = `Staking Decuple NFTs on the Campifo will
+                                                        provide you with annual hotel <b
+                                                            style="display: inline-block; color: #ff9900;">free
+                                                            reservations</b> around the
+                                                        world, Discount on Resorts and more...`;
       $("#des-card").toggle(900);
 }
 
@@ -392,9 +396,12 @@ function openOpous() {
             $("#des-card").toggle(200);
       }
       GoRandom();
-      document.getElementById('des-title').innerHTML = 'Opous GameFi';
+      document.getElementById('des-title').innerHTML = 'Medurism';
       document.getElementById('des-prb').style.width = '20%';
-      document.getElementById('des-text').innerHTML = 'Opous is a Decenteralized game platform. Its a multi genere exciting game.';
+      document.getElementById('des-text').innerHTML = `On the medurism platform, you can access the best <b
+                                                            style="display: inline-block; color: #ff9900;"> healthcare programs</b> where
+                                                        ever it is
+                                                        available at a lower price.`;
       $("#des-card").toggle(900);
 }
 
@@ -439,13 +446,17 @@ function openWin() {
             $("#des-card").toggle(200);
       }
       GoRandom();
-      document.getElementById('des-title').innerHTML = 'Sports win store';
+      document.getElementById('des-title').innerHTML = 'brandstaking';
       document.getElementById('des-prb').style.width = '5%';
 
-      document.getElementById('des-text').innerHTML = 'At the Sports store you can stake "LENZ" and get rewarded with sport euipments.';
+      document.getElementById('des-text').innerHTML = `In this market place instead of paying with
+                                                        cash, you can <b
+                                                            style="display: inline-block; color: #ff9900;">stake your
+                                                            NFTs</b>. You also may want to spend some
+                                                        DCO here....`;
       $("#des-card").toggle(900);
 }
-var latestActive = 'lenzo';
+var latestActive = 'decuple';
 function deactivate(id) {
       document.getElementById(latestActive).classList.add('link-deactive');
       document.getElementById(latestActive).classList.remove('link-active');
@@ -494,19 +505,19 @@ function setDetails() {
       console.log('setDetails been called. latestDetail is: ' + latestDetail)
       switch (latestDetail) {
             case 'lenzo':
-                  document.getElementById('details-title').innerHTML = 'Lenzo - Finances and beyond'
-                  document.getElementById('details-text').innerHTML = 'The LENZ is the managerial commodity and security token in the whole ecosystem of our projects. <br> When it comes to DeFi, you can have access to every financial tool and technic in Lenzo.'
+                  document.getElementById('details-title').innerHTML = 'Campifo - Tourism and beyond'
+                  document.getElementById('details-text').innerHTML = 'Proudly, Campifo is the first platform to incorporate NFTs into the mix, offering users exciting staking plans and rewarding them with valuable tourism services.'
                   document.getElementById('site-img').src = "assets/images/Sites/Lenzo.png";
-                  document.getElementById('go-btn').href = 'http://lenzo.io'
+                  document.getElementById('go-btn').href = 'http://www.campifo.com'
                   break;
 
 
             case 'opous':
-                  document.getElementById('details-title').innerHTML = 'Opous - The GameFi platform'
-                  document.getElementById('details-text').innerHTML = 'Opous is a browser-based metaverse simulation game. players will gain access to functionalities and rewards by participating in challenges. the play reflects a great expression of the "play to own" concept.  '
+                  document.getElementById('details-title').innerHTML = 'Medurism - Medical Tourism platform'
+                  document.getElementById('details-text').innerHTML = 'At Medurism, our mission is to provide accessible and affordable healthcare to everyone, regardless of their location, income, or social status.Our platform is designed to connect users with high-quality medical procedures at reasonable prices worldwide.'
                   document.getElementById('site-img').src = "assets/images/Sites/Opous.png";
                   console.log(document.getElementById('go-btn').href)
-                  document.getElementById('go-btn').href = 'http://opous.network'
+                  document.getElementById('go-btn').href = 'http://www.medurism.com'
                   console.log(document.getElementById('go-btn').href)
 
                   break;
@@ -515,7 +526,7 @@ function setDetails() {
                   document.getElementById('details-title').innerHTML = 'Decuple NFTs - The NFT Platform'
                   document.getElementById('details-text').innerHTML = 'The Decuple platform offers users multiple ways to derive benefits, and we aim to expand this range of opportunities as each season unfolds continually.'
                   document.getElementById('site-img').src = "assets/images/Sites/DeCuple.png";
-                  document.getElementById('go-btn').href = 'http://decuple.network'
+                  document.getElementById('go-btn').href = 'http://decuplenft.com'
 
                   break;
 
@@ -529,10 +540,10 @@ function setDetails() {
 
 
             case 'win':
-                  document.getElementById('details-title').innerHTML = 'Sports Win'
-                  document.getElementById('details-text').innerHTML = 'Participants, by staking token helping the project to grow.</p> <li>Sport wear</li> <li>Sport equipments</li> <li>Sport Events</li>  <p>We would be all together....</p>'
+                  document.getElementById('details-title').innerHTML = 'Brandstaking'
+                  document.getElementById('details-text').innerHTML = 'Brandstaking is a unique concept that combines branding and staking in a mutually beneficial way. It involves users staking their non-fungible tokens (NFTs) to actively participate in branding campaigns.'
                   document.getElementById('site-img').src = "assets/images/Sites/Win.png";
-                  document.getElementById('go-btn').href = 'https://sports.yahoo.com/'
+                  document.getElementById('go-btn').href = 'https://www.brandstaking.com/'
 
                   break;
 
@@ -578,24 +589,25 @@ function doSomething() {
 
 
             switch (latestDetail) {
-                  case 'lenzo':
-                        openOpous();
-                        break;
-                  case 'opous':
-                        openDeCuple();
-                        break;
+
                   case 'decuple':
                         openFaxen();
                         break;
                   case 'faxen':
+                        openLenzo();
+                        break;
+                  case 'lenzo':
+                        openOpous();
+                        break;
+                  case 'opous':
                         openWin();
                         break;
                   case 'win':
-                        openLenzo();
+                        openDeCuple();
                         break;
 
                   default:
-                        openOpous();
+                        openDeCuple();
                         break;
             }
       }
