@@ -417,7 +417,8 @@ function openDeCuple() {
       document.getElementById('des-title').innerHTML = 'Decuple NFTs';
       document.getElementById('des-prb').style.width = '95%';
 
-      document.getElementById('des-text').innerHTML = 'Decuple is a cutting-edge NFT project that provides a range of valuable services.';
+      document.getElementById('des-text').innerHTML = `Decuple is a cutting-edge NFT project that provides a range of valuable services. Owning <b
+                                                            style="display: inline-block; color: #ff9900;">Decuple NFTs</b> you'll gain access to all partner projects.`;
       $("#des-card").toggle(900);
 }
 
@@ -433,7 +434,8 @@ function openFaxen() {
       document.getElementById('des-title').innerHTML = 'Faxen Exchange';
       document.getElementById('des-prb').style.width = '45%';
 
-      document.getElementById('des-text').innerHTML = 'Faxen is a centeralized exchange serves you with best rates for most of cryptos.';
+      document.getElementById('des-text').innerHTML = `Faxen is a centeralized exchange serves you with best rates for trading cryptocurrencies. You can  <b
+                                                            style="display: inline-block; color: #ff9900;"> Stake Decuple NFTs </b> on faxen to earn free fee transactions `;
       $("#des-card").toggle(900);
 }
 
